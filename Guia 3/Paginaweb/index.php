@@ -222,12 +222,26 @@ session_start();
 
     <p><?php echo "Total Visitors: ".$count;?></p>
     
-    <footer>
-        
-    </footer>
-    <!-- <script src="js/nav.js?v=<?=$version?>"></script> -->
+<h1>Google maps</h1>
+
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    <footer></footer>
+
+
     <script src="js/footer.js?v=<?=$version?>"></script>
     <script src="js/home.js?v=<?=$version?>"></script>
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfxnZ9y4vT3xqyroazkuvfRvit6cQH4iI&callback=myMap" async defer></script>
 
 </body>
 </html>
